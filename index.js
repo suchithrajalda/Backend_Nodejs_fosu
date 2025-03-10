@@ -14,6 +14,8 @@ const app=express();
 
 const port=4001;
 dotEnv.config();
+app.use(cors())
+
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log("mongodb connected successfully"))
 .catch((error)=>console.log(error))
